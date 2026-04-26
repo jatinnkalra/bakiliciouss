@@ -1,61 +1,67 @@
-.cartheading {
-    padding: 20px 0px 20px 100px;
-    text-decoration: underline !important;
-    letter-spacing: 5px;
-    font-weight: bolder;
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* Heading */
+.cartheading {
+    padding: 20px;
+    text-decoration: underline !important;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+/* Main container */
 .cartoutercontainer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
 }
 
-.calculationdiv {
-    /* background-color: yellow; */
-    box-shadow: 2px 2px 2px black !important;
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding-bottom: 150px;
-}
-
-
+/* Cart section */
 .cartcontainer {
     padding: 0px 20px 150px 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex: 1;
+    min-width: 300px;
 }
 
+/* Calculation section */
+.calculationdiv {
+    /* box-shadow: 2px 2px 2px black !important; */
+    padding: 20px;
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Cart item box */
 .cont {
     border: 1px solid black !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 2px 2px 2px black;
-    padding: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
+/* Image */
 .cartimg {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 80px;
 }
 
-/* .cartitemcontainer {
-    /* border: 2px solid black !important; */
-/* padding: 20px; */
-/* } */
-
-footer {
-    position: fixed !important;
-    bottom: 0;
-    width: 100%;
-}
-
+/* Buttons */
 .remove-item-btn {
     padding: 10px;
     border-radius: 10px;
@@ -68,6 +74,14 @@ footer {
     transform: scale(1.1);
 }
 
+.placeorder {
+    padding: 10px;
+    background-color: rgb(36, 31, 31);
+    color: white;
+    border-radius: 10px;
+}
+
+/* Text */
 .prodname {
     font-weight: bolder;
 }
@@ -76,17 +90,7 @@ footer {
     font-weight: bolder;
 }
 
-.placeorder {
-    padding: 10px;
-    background-color: rgb(36, 31, 31);
-    color: white;
-    border-radius: 10px;
-}
-
-
-
-
-
+/* Form */
 #checkoutForm {
     display: flex;
     flex-direction: column;
@@ -103,13 +107,52 @@ footer {
     display: none;
 }
 
+/* Order status */
 .orderstatus {
-    display: inline-block;
+    display: none;
     padding: 20px;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
     background-color: rgb(32, 32, 34);
-    display: none;
+    color: white;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+
+    .cartoutercontainer {
+        flex-direction: column;
+    }
+
+    .cartheading {
+        text-align: center;
+    }
+
+    .cartcontainer {
+        width: 100%;
+        padding-bottom: 50px;
+        order: 1;
+    }
+
+    .calculationdiv {
+        width: 100%;
+        box-shadow: 0px 0px black !important;
+    }
+
+    .cont {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        position: static !important;
+    }
 }
