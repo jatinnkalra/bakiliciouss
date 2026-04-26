@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    opacity: 1;
+    animation: fadeIn 2s ease-in-out forwards;
+    background-color: transparent;
+    animation-delay: 3s;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        background-color: transparent;
+    }
+    to {
+        opacity: 0;
+        background-color: black;
+    }
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #833517;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+img{
+    width: 0px;
+    animation-name: zoom;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+
+    
+}
+
+@keyframes zoom {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 300px;
+    }
+    
+}
+
+
